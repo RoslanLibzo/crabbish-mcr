@@ -1,0 +1,23 @@
+// Import global variables
+$brand-1: #00B4D8;
+$brand-2: #EE642B;
+$brand-3: #FF9E00;
+$brand-4: #FFF5E6;
+$white: #fff;
+$black: #000;
+
+
+// Screen Widths
+$wide: 1200px;
+$nswide: 1080px;
+$normal: 1000px;
+$narrow: 800px;
+
+// Padding Values
+$global-p-1: 40px; // Range from 70px to 35px
+$global-p-2: 40px; // Range from 140 to 70px
+
+$padding-block-global-fb: 60px;
+$padding-block-global: clamp(2.5rem, 1.364rem + 4.04vw, 5rem); //This space will scale between 40px at 450px and 80px at 1440px.
+
+$padding-block-inline-g: minmax(30px , 4vw);

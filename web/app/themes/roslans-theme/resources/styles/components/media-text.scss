@@ -1,0 +1,18 @@
+body {
+    // background-color: $brand-3 !important;
+}
+
+.media-text {
+    gap: 8vw;
+    
+    @media (min-width: 800px){
+        gap: 4vw;
+    }
+    &__media{
+        width: 100%;
+    }   
+    &__text {
+        width: 100%;
+    }
+   
+}
