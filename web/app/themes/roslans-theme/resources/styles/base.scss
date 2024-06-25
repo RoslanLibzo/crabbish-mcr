@@ -56,6 +56,12 @@ body {
 .wrapper {
   &__full {
     max-width: 100%;
+   .wrapper {
+      &__wide, &__nswide, &__narrow {
+
+        padding-block: unset;
+      }
+    }
   }
   &__wide {
     max-width: $wide;
@@ -64,10 +70,14 @@ body {
   &__nswide {
     max-width: $nswide;
   }
+  &__normal {
+    max-width: $normal;
+  }
+
   &__narrow {
     max-width: $narrow;
   }
-  &__wide, &__nswide, &__narrow {
+  &__wide, &__nswide, &__narrow, &__normal {
     margin-inline: auto;
     padding-block: $padding-block-global;
     padding-inline: $padding-block-inline-g;

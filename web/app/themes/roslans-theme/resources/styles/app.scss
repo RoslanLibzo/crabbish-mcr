@@ -1,11 +1,15 @@
-// Import global variables
+// Import global variables and setup files
+@import 'fonts';
 @import 'variables';
 @import 'base';
+@import 'typography';
 
 
 // Import Component Styles
 @import 'components/heroimage';
 @import 'components/media-text';
+@import 'components/business-stats';
+@import 'components/highlights-grid';
 
 
 
