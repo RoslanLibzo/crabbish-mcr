@@ -1,0 +1,26 @@
+body {
+    // background-color: $brand-3 !important;
+}
+
+.business-stats {
+    .wp-block-columns {
+        
+    }
+
+    // Individual column
+    .wp-block-column {
+        p strong {
+            color: $brand-1;
+            font-size: 60px;
+            letter-spacing: 0;
+            font-weight: 700;
+            line-height: 1;
+        }
+        p:nth-child(1){
+            margin-bottom: 1em;
+        }
+        p {
+            font-weight: 500;
+        }
+    }
+}

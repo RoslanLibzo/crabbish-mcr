@@ -1,0 +1,46 @@
+// Setting all fonts!
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: Roboto , sans-serif;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+  line-height: 1.1em;
+  color: $black;
+}
+
+p, blockquote, pre, span, div, a {
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: rgb(20,20,20);
+  
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+
+h1 {
+font-size: 80px;
+}
+
+h2 {
+font-size: 60px;
+}
+
+h3 {
+font-size: 40px;
+}
+
+h4 {
+font-size: 35px;
+}
+
+h5 {
+font-size: 32px;
+}
+
+h6 {
+font-size: 28px;
+}

@@ -10,6 +10,22 @@ body {
     }
     &__media{
         width: 100%;
+
+        .wp-block-image {
+            border-radius: 30px;
+            overflow: hidden;
+
+            img {
+                scale: 1.1;
+                transition: all 300ms ease-out;
+            }
+
+            &:hover {
+                img {
+                    scale: 1;
+                }
+            }
+        }
     }   
     &__text {
         width: 100%;
