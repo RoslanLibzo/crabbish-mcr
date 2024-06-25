@@ -16,7 +16,8 @@ export default async (app) => {
   app
     .entry('app', ['@scripts/app', '@styles/app.scss'])
     .entry('editor', ['@scripts/editor', '@styles/editor'])
-    .assets(['images']);
+    .assets(['images', 'fonts']);
+    
 
   /**
    * Set public path
