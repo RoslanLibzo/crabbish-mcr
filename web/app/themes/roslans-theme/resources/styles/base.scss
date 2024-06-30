@@ -56,6 +56,8 @@ body {
 .wrapper {
   &__full {
     max-width: 100%;
+    padding-block: $padding-block-global;
+
    .wrapper {
       &__wide, &__nswide, &__narrow {
 
@@ -63,6 +65,7 @@ body {
       }
     }
   }
+  
   &__wide {
     max-width: $wide;
     

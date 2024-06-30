@@ -1,11 +1,14 @@
 import domReady from '@roots/sage/client/dom-ready';
-
+import * as componentMap from './components/countup';
+import Splide from '@splidejs/splide/dist/js/splide.esm';
 /**
  * Application entrypoint
  */
-domReady(async () => {
+console.log(Splide);
 
-  // ...
+domReady(async () => {
+  new Splide( '.splide' ).mount();
+  console.log("HERERE IS HELLO!");  // ...
 });
 
 /**
@@ -13,7 +16,6 @@ domReady(async () => {
  */
 if (import.meta.webpackHot) import.meta.webpackHot.accept(console.error);
 
-import * as componentMap from './components/countup';
 
 // components.register(componentMap);
 
