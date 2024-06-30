@@ -1,6 +1,5 @@
 {
   "name": "sage",
-  "$schema": "https://bud.js.org/bud.package.json",
   "private": true,
   "browserslist": [
     "extends @roots/browserslist-config"
@@ -20,13 +19,10 @@
     "translate:mo": "wp i18n make-mo ./resources/lang ./resources/lang"
   },
   "devDependencies": {
-    "@roots/bud": "6.4.1",
-    "@roots/bud-postcss": "^6.4.1",
-    "@roots/bud-sass": "6.4.1",
-    "@roots/bud-tailwindcss": "6.4.1",
-    "@roots/sage": "6.4.1"
+    "@roots/bud": "6.20.0",
+    "@roots/bud-sass": "^6.23.1",
+    "@roots/bud-tailwindcss": "6.20.0",
+    "@roots/sage": "6.20.0"
   },
-  "dependencies": {
-    "@babel/core": "7.23.6"
-  }
+  "dependencies": {}
 }

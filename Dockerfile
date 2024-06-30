@@ -22,7 +22,7 @@ RUN apt-get update && apt-get install -y \
 
 
 # Install Node.js and npm
-RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
+RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
 RUN apt-get update && apt-get install -y nodejs
 
 # Install Yarn
@@ -62,10 +62,6 @@ RUN chmod -R 755 /var/www/html \
 
 # Change ownership of necessary directories to non-root user (if needed)
 RUN chown -R appuser:appuser /var/www/html
-
-
-# Install Composer dependencies
-RUN composer install --no-interaction --prefer-dist --optimize-autoloader
 
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000
