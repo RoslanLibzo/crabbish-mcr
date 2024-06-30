@@ -1,4 +1,24 @@
-body {
-    // background-color: $brand-3 !important;
-}
+.highlights-grid {
+    display: grid;
+    grid: auto / repeat(3, 1fr);
 
+    &__single {
+        display: grid;
+        grid: repeat(2, 1fr) / repeat(2, 1fr);
+
+        .wp-block-image {
+            grid-row: span 2;   
+            img {
+                aspect-ratio: 1 / 1;
+                border-radius: 25px;
+                object-fit: cover;
+                max-height: 100px;
+                width: auto;
+            }
+        }
+
+        h3 {
+
+        }
+    }
+}

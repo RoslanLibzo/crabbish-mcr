@@ -9,6 +9,10 @@ body {
 
     // Individual column
     .wp-block-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
         p strong {
             color: $brand-1;
             font-size: 60px;
@@ -21,6 +25,28 @@ body {
         }
         p {
             font-weight: 500;
+        }
+    }
+
+    .num-increment__percent {
+        &:after{
+            content: "%";
+        }
+    }
+
+    .num-increment__plus {
+        &:after{
+            content: "+";
+        }
+    }
+
+    .num-increment__percent,
+    .num-increment__plus {
+        &:after {
+            position: relative;
+            font-size: 60px;
+            color: $brand-1;
+            line-height: 0;
         }
     }
 }

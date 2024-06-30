@@ -25,3 +25,13 @@ web/.htaccess
 
 # WP-CLI
 wp-cli.local.yml
+
+.vscode/
+
+
+mysql/
+
+node_modules/
+
+web/app/themes/roslan-second-theme/*
+
