@@ -1,6 +1,6 @@
 {
   "extends": [
-     "@roots/bud/config/jsconfig.json",
+    "@roots/bud/config/jsconfig.json",
     "@roots/sage/config/jsconfig.json"
   ],
   "compilerOptions": {
@@ -21,6 +21,7 @@
       "@roots/bud",
       "@roots/bud-react",
       "@roots/bud-postcss",
+      "@roots/bud-sass",
       "@roots/bud-preset-recommend",
       "@roots/bud-preset-wordpress",
       "@roots/bud-tailwindcss",
