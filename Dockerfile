@@ -48,16 +48,26 @@ RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli
 # # Replace 'roslan-code-box' with your actual username
 # RUN chown -R roslan-code-box:roslan-code-box /var/www/html
 
-# Set permissions: More restrictive for production
-# You might want to change this based on your security requirements
-RUN chmod -R 755 /var/www/html
+# Create a non-root user and group with a specific UID and GID (optional) NEW LINE
+RUN groupadd -g 1000 appuser && useradd -u 1000 -g appuser -m appuser
 
-# Copy existing application directory contents
-COPY . .
+# Copy the application code as the non-root user NEW LINE
+USER appuser
+COPY --chown=appuser:appuser . .
+
+# Switch back to root user for setting permissions and installing dependencies
+USER root
+RUN chmod -R 755 /var/www/html \
+    && composer install --no-interaction --prefer-dist --optimize-autoloader
+
+# Change ownership of necessary directories to non-root user (if needed)
+RUN chown -R appuser:appuser /var/www/html
+
 
 # Install Composer dependencies
 RUN composer install --no-interaction --prefer-dist --optimize-autoloader
 
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000
+USER appuser
 CMD ["php-fpm"]
