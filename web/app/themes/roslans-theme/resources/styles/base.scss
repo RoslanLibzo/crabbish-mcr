@@ -65,14 +65,20 @@ body {
       }
     }
   }
-  
+
+  &__superwide {
+    max-width: $superwide;
+  }
+
   &__wide {
     max-width: $wide;
     
   }
+
   &__nswide {
     max-width: $nswide;
   }
+
   &__normal {
     max-width: $normal;
   }
@@ -80,7 +86,8 @@ body {
   &__narrow {
     max-width: $narrow;
   }
-  &__wide, &__nswide, &__narrow, &__normal {
+
+  &__wide, &__nswide, &__narrow, &__normal, &__superwide {
     margin-inline: auto;
     padding-block: $padding-block-global;
     padding-inline: $padding-block-inline-g;
