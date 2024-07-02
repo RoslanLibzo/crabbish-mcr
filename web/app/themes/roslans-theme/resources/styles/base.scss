@@ -45,6 +45,8 @@ overflow-wrap: break-word;
 isolation: isolate;letter-spacing: normal;
 }
 
+html { font-size: 62.5% }
+
 
 // SETTING PROJECT DEFUALTS
 body {
@@ -59,8 +61,7 @@ body {
     padding-block: $padding-block-global;
 
    .wrapper {
-      &__wide, &__nswide, &__narrow {
-
+      &__wide, &__nswide, &__narrow, &__superwide {
         padding-block: unset;
       }
     }

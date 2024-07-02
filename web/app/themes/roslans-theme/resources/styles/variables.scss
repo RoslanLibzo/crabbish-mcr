@@ -20,5 +20,5 @@ $global-p-2: 40px; // Range from 140 to 70px
 
 $padding-block-global-fb: 60px;
 $padding-block-global: clamp(2.5rem, 1.364rem + 4.04vw, 5rem); //This space will scale between 40px at 450px and 80px at 1440px.
-
+// $padding-block-global-double: clamp()
 $padding-block-inline-g: minmax(30px , 4vw);
