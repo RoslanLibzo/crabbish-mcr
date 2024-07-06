@@ -56,6 +56,11 @@
           "slug": "brand-4"
         },
         {
+          "color": "#E62D2D",
+          "name": "Brand 5",
+          "slug": "brand-5"
+        },
+        {
           "color": "#fff",
           "name": "White",
           "slug": "white"

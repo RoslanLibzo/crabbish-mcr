@@ -45,7 +45,7 @@ overflow-wrap: break-word;
 isolation: isolate;letter-spacing: normal;
 }
 
-html { font-size: 62.5% }
+
 
 
 // SETTING PROJECT DEFUALTS
@@ -59,10 +59,12 @@ body {
   &__full {
     max-width: 100%;
     padding-block: $padding-block-global;
+    margin-bottom: $margin-bottom-global;
 
    .wrapper {
       &__wide, &__nswide, &__narrow, &__superwide {
         padding-block: unset;
+        margin-bottom: unset;
       }
     }
   }
@@ -92,5 +94,19 @@ body {
     margin-inline: auto;
     padding-block: $padding-block-global;
     padding-inline: $padding-block-inline-g;
+    margin-bottom: $margin-bottom-global;
+    &.no-margin {
+      margin-bottom: unset;
+    }
+    &.no-padding {
+      padding-block: unset; 
+      &__b {
+        padding-bottom: unset;
+      }
+      &__t {
+        padding-top: unset;
+      }
+    }
+    
   }
 }

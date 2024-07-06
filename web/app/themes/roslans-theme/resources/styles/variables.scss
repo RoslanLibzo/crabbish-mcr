@@ -1,8 +1,9 @@
 // Import global variables
-$brand-1: #00B4D8;
+$brand-1: #0CC0DF;
 $brand-2: #EE642B;
 $brand-3: #FF9E00;
 $brand-4: #FFF5E6;
+$brand-5: #E62D2D;
 $white: #fff;
 $black: #000;
 
@@ -20,5 +21,11 @@ $global-p-2: 40px; // Range from 140 to 70px
 
 $padding-block-global-fb: 60px;
 $padding-block-global: clamp(2.5rem, 1.364rem + 4.04vw, 5rem); //This space will scale between 40px at 450px and 80px at 1440px.
+
+$margin-bottom-global: 60px;
 // $padding-block-global-double: clamp()
 $padding-block-inline-g: minmax(30px , 4vw);
+
+
+$font-1: Roboto, sans-serif;
+$font-2: Montserrat, sans-serif;
