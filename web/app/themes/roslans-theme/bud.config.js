@@ -14,8 +14,8 @@ export default async (app) => {
    * @see {@link https://bud.js.org/reference/bud.assets}
    */
   app
-    .entry('app', ['@scripts/app', '@styles/app'])
-    .entry('editor', ['@scripts/editor', '@styles/editor'])
+    .entry('app', ['@scripts/app', '@styles/app.scss'])
+    .entry('editor', ['@scripts/editor', '@styles/editor.scss'])
     .assets(['images', 'fonts']);
 
 
@@ -36,7 +36,7 @@ export default async (app) => {
   app
     .setUrl('http://localhost:3000')
     .setProxyUrl('http://localhost:8000')
-    .watch(['resources/views', 'app', 'resources/styles', 'resources/scripts']);
+    .watch(['resources/views', 'app', 'resources/scripts']);
 
 
 
