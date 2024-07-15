@@ -61,6 +61,19 @@ body {
     padding-block: $padding-block-global;
     margin-bottom: $margin-bottom-global;
 
+    &.no-margin {
+      margin-bottom: unset;
+    }
+    &.no-padding {
+      padding-block: unset; 
+      &__b {
+        padding-bottom: unset;
+      }
+      &__t {
+        padding-top: unset;
+      }
+    }
+
    .wrapper {
       &__wide, &__nswide, &__narrow, &__superwide {
         padding-block: unset;
@@ -108,5 +121,15 @@ body {
       }
     }
     
+  }
+}
+
+.padding-block-global {
+  padding-block: $padding-block-global;
+  &__top {
+    padding-top: $padding-block-global;
+  }
+  &__bottom {
+    padding-bottom: $padding-block-global;
   }
 }
