@@ -1,8 +1,14 @@
 <header class="banner">
-  @if (has_nav_menu('primary_navigation'))
-    <nav class="nav-primary" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
-      {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav', 'echo' => false]) !!}
-      
-    </nav>
+  @php
+      // Retrieve the post with ID 107
+      $post_id = 107;
+      $post = get_post($post_id);
+  @endphp
+  
+  @if ($post)
+      <div class="header-pattern">
+          {!! apply_filters('the_content', $post->post_content) !!}
+      </div>
   @endif
+
 </header>
