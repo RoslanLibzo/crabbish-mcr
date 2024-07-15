@@ -1,0 +1,80 @@
+.website-nav-wrapper {
+    position: fixed;
+    top: 22px;
+    width: 100%;
+    z-index: 9999;
+    height: 180px;
+
+    .website-nav {
+        padding-inline: 0;
+        padding-right: 15px;
+        margin-top: 20px;
+        height: 70px;
+        border-radius: 40px;
+        padding-left: 0px;
+        position: relative;
+        box-shadow: 0px 10px 25px 1px rgba(0, 0, 0, 0.2);
+
+        @media (max-width: 1650px){
+            margin-inline: $padding-block-inline-g !important;
+        }
+
+        &__menu {
+            padding-left: 8px;
+            .wp-block-navigation__container {
+                gap: 20px;
+                color: white;
+                li {
+                    padding-inline: 5px;
+                    padding-block: 5px;
+                    color: white;
+                    font-size: 17px !important;
+                    transition: all 300ms ease;
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 0;
+                        height: 4px;
+                        background-color: $brand-5;
+                        width: 100%;
+                        z-index: 99999;
+                        transition: all 300ms ease;
+                        transform-origin: 50% 50%;
+                        transform: scaleX(0);
+                    }
+                    &:hover {
+                        transform: scale(1.05);
+                        &:after {
+                            width: 100%;
+                            transform: scaleX(1);
+                        }
+                    }
+                }
+            }
+        }
+
+        &__nav-cta {
+
+        }
+    }
+
+    .website-nav__logo {
+        // position: absolute;
+        // left: 0;
+        margin-left: -8px;
+        margin-bottom: 10px;
+        transition: all 300ms ease;
+        transform: rotate(0) scale(1);
+        
+        &:hover {
+            transform: rotate(-15deg) scale(1.1);
+        }
+
+
+        // top: 50%;
+        // transform: translateY(-50%);
+    }
+    
+}
