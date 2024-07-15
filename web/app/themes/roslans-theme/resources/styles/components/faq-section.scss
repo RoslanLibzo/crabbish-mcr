@@ -1,0 +1,48 @@
+.meal-deals {
+    
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    .meal-deals__box {
+        gap: 0;
+        display: flex;
+        flex-direction: column;
+        border-radius: 15px;
+        overflow: hidden;
+        &--upper {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            // background-color: $brand-5 !important;
+
+            padding: 20px 20px 0px 20px;
+            .wp-block-heading {
+                font-family: $font-2;
+                font-style: italic;
+                font-size: 3rem;
+                margin-bottom: 0.25em;
+            }
+            p {
+                font-weight: 700;
+                font-size: 1.25rem;
+                
+            }
+        }
+        &--lower {
+            padding: 20px 20px;
+            p {
+                font-size: 1rem;
+            }
+            .wp-block-buttons {
+                .wp-block-button {
+                    &__link {
+                        transition: 200ms ease;
+                        &:hover {
+                            background-color: $brand-5 !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
