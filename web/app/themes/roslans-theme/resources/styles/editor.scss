@@ -1,2 +1,18 @@
+// Import global variables and setup files
+@import 'fonts';
+@import 'variables';
+@import 'base';
+@import 'typography';
+
+// Import plugins
+@import 'libraries/splide-skyblue.min.css';
 
 
+// Import Component Styles
+@import 'components/heroimage';
+@import 'components/media-text';
+@import 'components/business-stats';
+@import 'components/highlights-grid';
+@import 'components/image-carousel';
+@import 'components/meal-deals';
+@import 'components/image-overlay-box';
