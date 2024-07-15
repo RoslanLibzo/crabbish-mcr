@@ -29,6 +29,9 @@ body {
     }   
     &__text {
         width: 100%;
+        .wp-block-heading {
+            color: $black;
+        }
     }
    
 }
