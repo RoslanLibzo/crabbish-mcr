@@ -10,7 +10,12 @@ body {
     padding-bottom: 0;
 
     h1 {
-        color: $brand-3;
+        span {
+            font-family: $font-2;
+        }
+        text-align: center;
+        color: $white;
+        font-family: $font-2;
         margin-bottom: 0.2em;
     }
 
