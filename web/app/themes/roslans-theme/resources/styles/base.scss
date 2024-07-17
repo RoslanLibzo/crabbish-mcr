@@ -84,29 +84,43 @@ body {
 
   &__superwide {
     max-width: $superwide;
+    @media (max-width: $superwide){
+      padding-inline: $padding-block-inline-g;
+    }
   }
 
   &__wide {
     max-width: $wide;
-    
+    @media (max-width: $wide){
+      padding-inline: $padding-block-inline-g;
+    }
   }
 
   &__nswide {
     max-width: $nswide;
+    @media (max-width: $nswide){
+      padding-inline: $padding-block-inline-g;
+    }
   }
 
   &__normal {
     max-width: $normal;
+    @media (max-width: $normal){
+      padding-inline: $padding-block-inline-g;
+    }
   }
 
   &__narrow {
     max-width: $narrow;
+    @media (max-width: $narrow){
+      padding-inline: $padding-block-inline-g;
+    }
   }
 
   &__wide, &__nswide, &__narrow, &__normal, &__superwide {
     margin-inline: auto;
     padding-block: $padding-block-global;
-    padding-inline: $padding-block-inline-g;
+    
     margin-bottom: $margin-bottom-global;
     &.no-margin {
       margin-bottom: unset;
@@ -125,6 +139,7 @@ body {
 }
 
 .padding-block-global {
+  padding-block: $padding-block-global-fb;
   padding-block: $padding-block-global;
   &__top {
     padding-top: $padding-block-global;
@@ -132,4 +147,18 @@ body {
   &__bottom {
     padding-bottom: $padding-block-global;
   }
+}
+
+.padding-block-global-m {
+  padding-block: $padding-block-global-fb-m;
+  padding-block: $padding-block-global-m;
+}
+
+.padding-block-global-l {
+  padding-block: $padding-block-global-fb-l;
+  padding-block: $padding-block-global-l
+}
+
+.margin-bot-g {
+    margin-bottom: $margin-bottom-global;
 }
