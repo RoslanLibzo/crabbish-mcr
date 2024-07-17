@@ -5,7 +5,7 @@ FROM php:8.1-fpm
 # Set working directory
 WORKDIR /var/www/html
 
-# Install system dependencies
+# Install system dependencies, Node.js, Yarn, PHP extensions, and WP-CLI in one RUN command
 RUN apt-get update && apt-get install -y \
     libpng-dev \
     libjpeg-dev \
@@ -14,54 +14,44 @@ RUN apt-get update && apt-get install -y \
     libxml2-dev \
     zip \
     unzip \
-    git \ 
+    git \
     curl \
     mariadb-client \
+    && curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
+    && apt-get install -y nodejs \
+    && npm install -g yarn \
+    && yarn global add @roots/bud \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd mysqli \
+    && curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
+    && chmod +x wp-cli.phar \
+    && mv wp-cli.phar /usr/local/bin/wp \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
-
-
-# Install Node.js and npm
-RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
-RUN apt-get update && apt-get install -y nodejs
-
-# Install Yarn
-RUN npm install -g yarn
-
-# Install Bud CLI
-RUN yarn global add @roots/bud
-
-# Install PHP extensions
-RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd mysqli
-
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Install WP-CLI
-RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
-    && chmod +x wp-cli.phar \
-    && mv wp-cli.phar /usr/local/bin/wp
-
-
-# # Replace 'roslan-code-box' with your actual username
-# RUN chown -R roslan-code-box:roslan-code-box /var/www/html
-
-# Create a non-root user and group with a specific UID and GID (optional) NEW LINE
+# Create a non-root user and group with a specific UID and GID (optional)
 RUN groupadd -g 1000 appuser && useradd -u 1000 -g appuser -m appuser
 
-# Copy the application code as the non-root user NEW LINE
-USER appuser
+# Copy the application code as the non-root user
 COPY --chown=appuser:appuser . .
 
+# Use Composer cache
+# RUN mkdir -p /root/.composer && chown -R appuser:appuser /root/.composer
+
 # Switch back to root user for setting permissions and installing dependencies
-USER root
-RUN chmod -R 755 /var/www/html \
-    && composer install --no-interaction --prefer-dist --optimize-autoloader
+# USER root
+# RUN chmod -R 755 /var/www/html \
+# composer install --no-interaction --prefer-dist --optimize-autoloader
 
 # Change ownership of necessary directories to non-root user (if needed)
-RUN chown -R appuser:appuser /var/www/html
+# RUN chown -R appuser:appuser /var/www/html
+
+# Copy custom PHP configuration from environment variables
+RUN echo "upload_max_filesize=64M" >> /usr/local/etc/php/conf.d/uploads.ini \
+    && echo "post_max_size=64M" >> /usr/local/etc/php/conf.d/uploads.ini
 
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000

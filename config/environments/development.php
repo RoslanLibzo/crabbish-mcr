@@ -18,3 +18,8 @@ ini_set('display_errors', '1');
 
 // Enable plugin and theme updates and installation from the admin
 Config::define('DISALLOW_FILE_MODS', false);
+
+
+@ini_set('upload_max_filesize', '64M');
+@ini_set('post_max_size', '64M');
+@ini_set('max_execution_time', '300');

@@ -6,6 +6,8 @@ services:
     container_name: crabbish_web
     volumes:
       - ./:/var/www/html
+      - ./.Inv_NNJ_php.ini:/usr/local/etc/php/conf.d/zz_inv_nnj_custom_php.ini
+
     environment:
       - WORDPRESS_DB_HOST=${DB_HOST}
       - WORDPRESS_DB_USER=${DB_USER}
@@ -14,6 +16,8 @@ services:
       - WP_ENV=${WP_ENV}
       - WP_HOME=${WP_HOME}
       - WP_SITEURL=${WP_SITEURL}
+      - UPLOAD_MAX_FILESIZE=64M
+      - POST_MAX_SIZE=64M
     depends_on:
       - db
     networks:
