@@ -1,23 +1,21 @@
-<article @php(post_class('h-entry'))>
-  <header>
-    <h1 class="p-name">
-      {!! $title !!}
-    </h1>
-
-    @include('partials.entry-meta')
-  </header>
-
+<article>
   <div class="e-content">
-    @php(the_content())
+    <div class="wrapper__full news-single__wrapper">
+      <div class="wrapper__wide">
+      @php 
+      echo the_content()
+      @endphp
+      </div>
+    </div>
   </div>
-
-  @if ($pagination)
-    <footer>
-      <nav class="page-nav" aria-label="Page">
-        {!! $pagination !!}
-      </nav>
-    </footer>
+  @php
+      $carousel_id = 329;
+      $carousel = get_post($carousel_id);
+  @endphp
+  @if ($carousel)
+      <div class="posts-feed">
+          {!! apply_filters('the_content', $carousel->post_content) !!}
+      </div>
   @endif
 
-  @php(comments_template())
 </article>

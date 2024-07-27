@@ -8,24 +8,29 @@ import Splide from '@splidejs/splide/dist/js/splide.esm';
 console.log(Splide);
 
 domReady(async () => {
-  new Splide( '.splide', {
-    type   : 'loop',
-    perPage: 3,
-    speed: 500,
-    drag: true,
-    gap: '3vw',
-    padding: { left: 10, right: 10 },
-    perMove: 1,
-    breakpoints: {
-      900: {
-        perPage: 2
-      },
-      600: {
-        perPage: 1
+
+  if(document.querySelector('.splide')){
+    new Splide( '.splide', {
+      type   : 'loop',
+      perPage: 3,
+      speed: 500,
+      drag: true,
+      gap: '3vw',
+      padding: { left: 10, right: 10 },
+      perMove: 1,
+      breakpoints: {
+        900: {
+          perPage: 2
+        },
+        600: {
+          perPage: 1
+        }
       }
-    }
-  } ).mount();
-  console.log("HERERE IS HELLO!");  // ...
+    } ).mount();
+    console.log("HERERE IS HELLO!");  // ...
+  }
+
+ 
 
   
 });

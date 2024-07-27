@@ -123,10 +123,13 @@
     &__inner {
         p {
             margin: 0;
-            font-size: 0.75rem;
+            font-size: 0.75rem !important;
             color: $black;
             font-weight: 300;
             font-family: $font-1;
+        }
+        p:nth-child(1){
+            padding-top: 5px;
         }
     }
 }
