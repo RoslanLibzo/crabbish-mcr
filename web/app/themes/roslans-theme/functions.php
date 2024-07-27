@@ -91,3 +91,10 @@ function enqueue_block_editor_assets() {
     wp_enqueue_style('theme-styles-editor', get_template_directory_uri() . '/public/css/app.css', array(), '1.0', 'all');
 }
 add_action('enqueue_block_editor_assets', 'enqueue_block_editor_assets');
+
+function increase_upload_limits() {
+    @ini_set('upload_max_size', '64M');
+    @ini_set('post_max_size', '64M');
+    @ini_set('max_execution_time', '300');
+}
+add_action('init', 'increase_upload_limits');

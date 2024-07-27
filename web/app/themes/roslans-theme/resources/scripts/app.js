@@ -1,5 +1,6 @@
 import domReady from '@roots/sage/client/dom-ready';
 import * as componentMap from './components/countup';
+import * as navigation from './components/navigation';
 import Splide from '@splidejs/splide/dist/js/splide.esm';
 /**
  * Application entrypoint
@@ -10,12 +11,15 @@ domReady(async () => {
   new Splide( '.splide', {
     type   : 'loop',
     perPage: 3,
-    speed: 1000,
+    speed: 500,
+    drag: true,
     gap: '3vw',
     padding: { left: 10, right: 10 },
     perMove: 1
   } ).mount();
   console.log("HERERE IS HELLO!");  // ...
+
+  
 });
 
 /**
