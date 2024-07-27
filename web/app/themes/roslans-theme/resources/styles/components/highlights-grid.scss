@@ -3,38 +3,76 @@
     grid: auto / repeat(3, 1fr);
     row-gap: 30px;
     column-gap: 40px;
+    @media (max-width: 900px){
+        grid: auto / repeat(2, 1fr);
+    }
 
     &__single {
         display: grid;
-        grid: repeat(2, auto) / auto 1fr;
+        grid: repeat(2, auto) / repeat(3, 1fr);
         margin-bottom: 30px;
         column-gap: 20px;
+        @media (max-width: 650px){
+            grid: repeat(3,auto) / repeat(3,1fr);
+        }
         
         .wp-block-image {
+            grid-column: span 1;
             grid-row: span 2;   
             height: fit-content;
+            margin-block: auto;
+            @media (max-width: 650px){
+                grid-column: span 3;
+            }
+            
 
             img {
                 aspect-ratio: 1 / 1;
                 border-radius: 25px;
                 object-fit: cover;
                 margin-left: auto;
-                width: 60%;
+                width: 90%;
                 height: auto;
+                @media(max-width: 900px){
+                    width: 50%;
+                    margin-bottom: 20px;
+                }
+                @media (max-width: 650px){
+                    margin-inline: auto;
+                }
+                
             }
         }
 
         .wp-block-heading {
+            grid-column: span 2;
             height: fit-content;
             margin-top: 10px;
             font-size: 18px;
             text-align: left;
             display: block;
             width: 100%;
+            @media (max-width: 650px){
+                grid-column: span 3;
+                text-align: center;
+                max-width: 200px;
+            }
+            @media (max-width: 470px){
+                font-size: 14px;
+            }
         }
 
         p {
+            grid-column: span 2;
             font-size: 16px;
+            @media (max-width: 650px){
+                grid-column: span 3;
+                text-align: center;
+                max-width: 200px;
+            }
+            @media (max-width: 470px){
+                font-size: 14px;
+            }
         }
 
     }

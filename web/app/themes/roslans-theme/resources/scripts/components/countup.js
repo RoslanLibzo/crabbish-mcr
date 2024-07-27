@@ -12,21 +12,26 @@ function animateValue(obj, start, end, duration) {
     };
     window.requestAnimationFrame(step);
   }
-  
-const percent = document.querySelector(".num-increment__percent strong");
-const percentEndNum = percent.innerHTML;
-if(Number(percentEndNum)){
-    animateValue(percent, 0, percentEndNum, 2000);
-} else {
-    console.log('Percent num was not a number!');
+
+
+function handleIntersection(entries, observer) {
+  entries.forEach(entry => {
+      if (entry.isIntersecting) {
+          const element = entry.target;
+          const endNum = Number(element.querySelector('strong').innerHTML);
+          if (!isNaN(endNum)) {
+              animateValue(element.querySelector('strong'), 0, endNum, 3000);
+          } else {
+              console.log('End num was not a number!');
+          }
+          observer.unobserve(element); // Stop observing once the animation starts
+      }
+  });
 }
 
-const plus = document.querySelector(".num-increment__plus strong");
-const plusEndNum = plus.innerHTML;
 
-if(Number(plusEndNum)){
-    animateValue(plus, 0, plusEndNum, 2000);
-} else {
-    console.log('Plus num was not a number!');
-}
+const observer = new IntersectionObserver(handleIntersection, { threshold: 0.1 });
 
+document.querySelectorAll('.num-increment__percent, .num-increment__plus').forEach(element => {
+    observer.observe(element);
+});

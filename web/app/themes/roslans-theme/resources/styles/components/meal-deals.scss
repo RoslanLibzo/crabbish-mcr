@@ -1,17 +1,35 @@
 .meal-deals {
+    display: grid !important;
     grid-template-columns: repeat(4, 1fr);
     align-items: stretch !important;
-    
     gap: 30px;
+
+    
+    @media (max-width: 1200px){
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 800px){
+        gap: 15px;
+    }
+    @media (max-width: 450px){
+        grid-template-columns: repeat(1,1fr);
+    }
+    
     .meal-deals__box {
         width: 100%;
         gap: 0;
         display: grid;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 200px auto;
         flex-direction: column;
         border-radius: 15px;
         overflow: hidden;
         height: auto;
+        @media (max-width: 1200px){
+            grid-template-rows: 140px auto;
+        }
+        @media (max-width: 450px){
+            grid-template-rows: 120px auto;
+        }
         &--upper {
             display: flex;
             flex-direction: column;
@@ -25,12 +43,15 @@
                 font-family: $font-2;
                 font-style: italic;
                 font-size: 3rem;
+                //This text will scale between 25px at 400px and 48px at 1440px.
+                font-size: clamp(1.563rem, 1.01rem + 2.212vw, 3rem);
                 margin-bottom: 0.25em;
             }
             p {
                 font-weight: 700;
                 font-size: 1.25rem;
-                
+                //This text will scale between 16px at 400px and 20px at 1440px.
+                font-size: clamp(1rem, 0.904rem + 0.385vw, 1.25rem);
             }
         }
         &--lower {

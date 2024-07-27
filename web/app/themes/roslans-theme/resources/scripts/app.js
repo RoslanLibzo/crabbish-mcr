@@ -15,7 +15,15 @@ domReady(async () => {
     drag: true,
     gap: '3vw',
     padding: { left: 10, right: 10 },
-    perMove: 1
+    perMove: 1,
+    breakpoints: {
+      900: {
+        perPage: 2
+      },
+      600: {
+        perPage: 1
+      }
+    }
   } ).mount();
   console.log("HERERE IS HELLO!");  // ...
 

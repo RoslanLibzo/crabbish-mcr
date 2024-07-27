@@ -22,19 +22,25 @@ p {
 
 
 h1 {
-font-size: 60px;
+font-size: 4rem;
+//This text will scale between 35px at 400px and 60px at 1440px.
+font-size: clamp(2.188rem, 1.587rem + 2.404vw, 3.75rem);
 }
 
 h2 {
-font-size: 60px;
+font-size: 4rem;
+//This text will scale between 35px at 400px and 60px at 1440px.
+font-size: clamp(2.188rem, 1.587rem + 2.404vw, 3.75rem);
 }
 
 h3 {
-font-size: 40px;
+font-size: 2.5rem;
+//This text will scale between 30px at 400px and 40px at 1440px.
+font-size: clamp(1.875rem, 1.635rem + 0.962vw, 2.5rem);
 }
 
 h4 {
-font-size: 35px;
+font-size: 2rem;
 }
 
 h5 {
