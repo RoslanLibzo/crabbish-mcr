@@ -1,0 +1,122 @@
+.menu-card {
+    background-color: $white;
+    border-radius: 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 30px;
+    padding-block: 1.5rem;
+
+    &__header {
+        &#menu-header {
+            margin-inline: 1.5rem !important; 
+            background-color: $brand-5;
+            margin-bottom: 3rem; // 2 for the transform, and 2 actual margin
+            border-radius: 30px;
+            padding-block: 0.5rem;
+            color: $white;
+            text-align: center;
+            p {
+                margin-bottom: 0.375em;
+                font-weight: 300;
+            }
+            .wp-block-heading {
+                color: $white;
+                font-weight: 900;
+                font-family: $font-2;
+                letter-spacing: 3px;
+
+                @media (max-width: 400px){
+                    //This text will scale between 30px at 400px and 40px at 1440px.
+                    font-size: clamp(1.875rem, 1.635rem + 0.962vw, 2.5rem);
+                }
+
+            }
+        }
+
+    }
+
+    &__row {
+        margin-inline: 0 !important;
+        display: flex;
+        flex-direction: column;
+    }
+    .menu-row {
+        &__heading {
+            .wp-block-heading {
+                font-size: 1.5rem; //fallback
+                //This text will scale between 18px at 440px and 25px at 1440px.
+                font-size: clamp(1.125rem, 0.932rem + 0.7vw, 1.563rem);
+            }
+        }
+        &__item {
+            width: 100%;
+            padding-inline: 2rem;
+            position: relative;
+            &--icon {
+                position: absolute;
+                top: 50%;
+                left: 1rem;
+                transform: translateY(-50%) translateX(-50%) rotate(275deg);
+                height: 90px;
+                z-index: 10;
+                // width: 100px;
+
+                img {
+                    height: 100%;
+                    width: auto;
+                    object-fit: cover;
+                }
+            }   
+            &--selection {
+                width: 100%;
+                align-items: center;
+                // margin-bottom: 2.5rem;
+                text-align: center;
+                clip-path: polygon(80% 0, 100% 50%, 80% 100%, 0% 100%, 20% 50%, 0% 0%);
+                
+
+                p:nth-child(1){
+                    margin-top: 0.25em;
+                    margin-bottom: 0.125em;
+                }
+                p {
+                    margin-bottom: 0.25em;
+                    //This text will scale between 12px at 440px and 18px at 1440px.
+                    font-size: clamp(0.75rem, 0.585rem + 0.6vw, 1.125rem);
+                }
+                p:nth-child(2){
+                    margin-bottom: 0;
+                }
+                p:nth-child(3){
+                    color: $white;
+                    font-weight: 700;
+                    background-color: rgba($black, 0.7);
+                    clip-path: polygon(100% 0, 80% 100%, 0% 100%, 20% 0);
+                    padding-inline: 10px;
+                    margin-top: 0;
+                    display: inline-block;
+                }
+            }
+            &--selection:nth-child(1){
+                background-color: red;
+            }
+            &--selection:nth-child(2){
+                background-color: $brand-1;
+                clip-path: polygon(80% 0, 100% 50%, 80% 100%, 0% 100%, 0 50%, 0 0);
+                padding-inline: 10px;
+            }
+            &--selection:nth-child(3){
+                background-color: $brand-1;
+                padding-inline: 10px;
+                margin-left: -12px;
+            }
+            &--selection:nth-child(4){
+                background-color: $brand-1;
+                padding-inline: 10px;
+                margin-left: -12px;
+            }
+        }
+    }
+}

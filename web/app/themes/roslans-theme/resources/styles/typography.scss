@@ -41,6 +41,8 @@ font-size: clamp(1.875rem, 1.635rem + 0.962vw, 2.5rem);
 
 h4 {
 font-size: 2rem;
+//This text will scale between 18px at 440px and 25px at 1440px.
+font-size: clamp(1.125rem, 0.932rem + 0.7vw, 1.563rem);
 }
 
 h5 {
