@@ -1296,78 +1296,73 @@
       ]
     },
     "typography": {
-      "customFontSize": false,
+      "customFontSize": true,
       "fontFamilies": [
         {
-          "fontFamily": "ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"",
-          "name": "Ui-sans-serif",
-          "slug": "sans"
+          "fontFamily": "Roboto,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"",
+          "name": "Roboto",
+          "slug": "Roboto"
         },
         {
-          "fontFamily": "ui-serif,Georgia,Cambria,\"Times New Roman\",Times,serif",
-          "name": "Ui-serif",
-          "slug": "serif"
-        },
-        {
-          "fontFamily": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace",
-          "name": "Ui-monospace",
-          "slug": "mono"
+          "fontFamily": "Montserrat,Georgia,Cambria,\"Times New Roman\",Times,serif",
+          "name": "Montserrat",
+          "slug": "Montserrat"
         }
       ],
       "fontSizes": [
         {
           "name": "xs",
-          "size": "0.75rem",
+          "size": "clamp(0.75rem, 0.64rem + 0.4vw, 1rem)",
           "slug": "xs"
         },
         {
           "name": "sm",
-          "size": "0.875rem",
+          "size": "clamp(0.875rem, 0.765rem + 0.4vw, 1.125rem)",
           "slug": "sm"
         },
         {
           "name": "base",
-          "size": "1rem",
+          "size": "clamp(1rem, 0.835rem + 0.6vw, 1.375rem)",
           "slug": "base"
         },
         {
           "name": "lg",
-          "size": "1.125rem",
+          "size": "clamp(1.125rem, 0.96rem + 0.6vw, 1.5rem)",
           "slug": "lg"
         },
         {
           "name": "xl",
-          "size": "1.25rem",
+          "size": "clamp(1.25rem, 1.085rem + 0.6vw, 1.625rem)",
           "slug": "xl"
         },
         {
           "name": "2xl",
-          "size": "1.5rem",
+          "size": "clamp(1.5rem, 1.335rem + 0.6vw, 1.875rem)",
           "slug": "2xl"
         },
         {
           "name": "3xl",
-          "size": "1.875rem",
+          "size": "clamp(1.875rem, 1.765rem + 0.4vw, 2.125rem)",
           "slug": "3xl"
         },
         {
           "name": "4xl",
-          "size": "2.25rem",
+          "size": "clamp(2.25rem, 2.14rem + 0.4vw, 2.5rem)",
           "slug": "4xl"
         },
         {
           "name": "5xl",
-          "size": "3rem",
+          "size": "clamp(3rem, 2.78rem + 0.8vw, 3.5rem)",
           "slug": "5xl"
         },
         {
           "name": "6xl",
-          "size": "3.75rem",
+          "size": "clamp(3.75rem, 3.497rem + 0.92vw, 4.325rem)",
           "slug": "6xl"
         },
         {
           "name": "7xl",
-          "size": "4.5rem",
+          "size": "clamp(4.5rem, 4.28rem + 0.8vw, 5rem)",
           "slug": "7xl"
         },
         {
